@@ -4,20 +4,23 @@ const Player = ({ player, symbol }) => {
 
     const [isEditing, setIsEditing] = useState(false);
 
-    const editingField = () => {
+    const handleEditClick = () => {
         setIsEditing(true);
+    }
+
+    let playerName = <span className="player-name">{player}</span>;
+
+    if (isEditing) {
+        playerName = <input type='text' required />;
     }
 
     return (
         <li>
             <span className="player-info">
-                {
-                    isEditing ? <input />
-                        : <span className="player-name">{player}</span>
-                }
+                {playerName}
                 <span className="player-symbol">{symbol}</span>
             </span>
-            <button onClick={editingField}>Edit</button>
+            <button onClick={handleEditClick}>Edit</button>
         </li>
     )
 }
