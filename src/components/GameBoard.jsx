@@ -8,15 +8,18 @@ const initialGameBoard = [
 
 const GameBoard = () => {
     return (
-        // trying to get the gameboard to display
         <ol id='game-board'>
-            {initialGameBoard.map((row, rowIndex) => {
-                <ol key={rowIndex}>
-                    {row.map((column, columnIndex) => {
-                        <li key={columnIndex}></li>
-                    })}
-                </ol>
-            })}
+            {initialGameBoard.map((row, rowIndex) => (
+                <li key={rowIndex}>
+                    <ol>
+                        {row.map((playerSymbol, columnIndex) => (
+                            <li key={columnIndex}>
+                                <button>{playerSymbol}</button>
+                            </li>
+                        ))}
+                    </ol>
+                </li>
+            ))}
         </ol>
     )
 }

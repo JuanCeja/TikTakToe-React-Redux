@@ -18,6 +18,4 @@ function App() {
   )
 }
 
-export default App
-
-// check gameboard component work with lesson 79
+export default App;
